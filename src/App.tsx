@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+type UsersType = {
+  id: number;
+  name: string;
+};
 function App() {
+  console.log("hi");
+  const names: string[] = ["Dymych", "Sveta", "Katya", "Victor", "Ignat"];
+  const users: UsersType[] = [
+    { id: 1241, name: "Dymych" },
+    { id: 5135, name: "Sveta" },
+    { id: 8235789, name: "Katya" },
+    { id: 358315789, name: "Victor" },
+    { id: 6542, name: "Ignat" },
+  ];
+  const liElements = names.map((n, index) => (
+    <li key={index}>
+      {n}
+      {index}
+    </li>
+  ));
+  const liUsersElements = users.map((n, index) => (
+    <li key={index}>{n.name}</li>
+  ));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>hi</h1>
+      <ul>{liElements}</ul>
+      <ul>{liUsersElements}</ul>
+    </>
   );
 }
 
