@@ -68,5 +68,8 @@ export const getStreetsTitlesOfHouses = (houses: HousesType[]) => {
   return houses.map((h) => h.address.street.title);
 };
 
-export const createMessages = (houses: HousesType[]) =>
-  houses.map((h) => `Hello guys from ${h.address.street.title}`);
+export const createMessages = (houses: HousesType[]) => {
+  const callBackFn = (h: HousesType) =>
+    `Hello guys from ${h.address.street.title}`;
+  return houses.map(callBackFn);
+};
