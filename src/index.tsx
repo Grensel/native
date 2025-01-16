@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { sum } from "./03/03";
+import { User } from "./06/06-callBack";
 
 var a = sum(1, 2);
 
@@ -13,6 +14,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <App />
+    <User />
   </React.StrictMode>
 );
 
