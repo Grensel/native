@@ -21,6 +21,7 @@ export type CompanyType = { id: number; title: string };
 export type WithCompaniesTypu = UserType & {
   companies: Array<CompanyType>;
 };
+
 export const makeHairstyle = (u: UserType, power: number) => {
   const copy = {
     ...u,
@@ -54,10 +55,7 @@ export const moveUserToOtherHouse = (
   };
 };
 
-export const addNewBooksToUser = (
-  u: UserWithLaptopTypu & UserWithBoksTypu,
-  newBooks: string
-) => {
+export const addNewBooksToUser = (u: UserWithLaptopTypu & UserWithBoksTypu, newBooks: string) => {
   return {
     ...u,
     books: [...u.books, newBooks],
@@ -70,26 +68,17 @@ export const updateBook = (
   newBooks: string
 ) => ({
   ...u,
-  books: u.books.map((b) => (b === oldBook ? newBooks : b)),
+  books: u.books.map(b => (b === oldBook ? newBooks : b)),
 });
 
-export const removeBook = (
-  u: UserWithLaptopTypu & UserWithBoksTypu,
-  removewBook: string
-) => ({
+export const removeBook = (u: UserWithLaptopTypu & UserWithBoksTypu, removewBook: string) => ({
   ...u,
-  books: u.books.filter((b) => b !== removewBook),
+  books: u.books.filter(b => b !== removewBook),
 });
 
-export const updateCompanyTitle = (
-  u: WithCompaniesTypu,
-  id: number,
-  newTitle: string
-) => ({
+export const updateCompanyTitle = (u: WithCompaniesTypu, id: number, newTitle: string) => ({
   ...u,
-  companies: u.companies.map((c) =>
-    c.id === id ? { ...c, title: newTitle } : c
-  ),
+  companies: u.companies.map(c => (c.id === id ? { ...c, title: newTitle } : c)),
 });
 
 export const updatedCompanyTitle = (
@@ -100,7 +89,7 @@ export const updatedCompanyTitle = (
 ) => {
   let companyCopy = { ...companies };
 
-  companyCopy[userName] = companyCopy[userName].map((c) =>
+  companyCopy[userName] = companyCopy[userName].map(c =>
     c.id === companyId ? { ...c, title: newTitle } : c
   );
 

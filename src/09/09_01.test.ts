@@ -1,3 +1,5 @@
+import { user } from "./09_01";
+
 type UserType = {
   name: string;
   age: number;
@@ -28,6 +30,7 @@ test("reference type test", () => {
 
 test("array type test", () => {
   const users = [
+    user,
     {
       name: "Dimych",
       age: 32,
@@ -42,7 +45,7 @@ test("array type test", () => {
 
   admins.push({ name: "bamdugan", age: 10 });
 
-  expect(users[2]).toEqual({ name: "bamdugan", age: 10 });
+  expect(users[3]).toEqual({ name: "bamdugan", age: 10 });
 });
 
 test("value type test", () => {

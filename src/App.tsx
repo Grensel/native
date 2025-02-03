@@ -4,7 +4,6 @@ type UsersType = {
   name: string;
 };
 function App() {
-  console.log("hi");
   const names: string[] = ["Dymych", "Sveta", "Katya", "Victor", "Ignat"];
   const users: UsersType[] = [
     { id: 1241, name: "Dymych" },
@@ -19,9 +18,7 @@ function App() {
       {index}
     </li>
   ));
-  const liUsersElements = users.map((n, index) => (
-    <li key={index}>{n.name}</li>
-  ));
+  const liUsersElements = users.map((n, index) => <li key={index}>{n.name}</li>);
   return (
     <>
       <h1>hi</h1>

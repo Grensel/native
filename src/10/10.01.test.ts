@@ -1,7 +1,5 @@
-import { title } from "process";
 import {
   addNewBooksToUser,
-  CompanyType,
   makeHairstyle,
   moveUser,
   moveUserToOtherHouse,
@@ -193,8 +191,7 @@ test("update new company", () => {
     ],
   };
 
-  const userCopy = updateCompanyTitle(user, 1, "Epam") as WithCompaniesTypu &
-    UserWithLaptopTypu;
+  const userCopy = updateCompanyTitle(user, 1, "Epam") as WithCompaniesTypu & UserWithLaptopTypu;
 
   expect(user).not.toBe(userCopy);
   expect(user.address).toBe(userCopy.address);
@@ -204,7 +201,7 @@ test("update new company", () => {
 });
 
 test("updated new company", () => {
-  let companies = {
+  const companies = {
     Dimich: [
       {
         id: 1,
@@ -215,10 +212,12 @@ test("updated new company", () => {
         title: "IT-INCUBATOR",
       },
     ],
-    Artem: {
-      id: 2,
-      title: "IT-INCUBATOR",
-    },
+    Artem: [
+      {
+        id: 2,
+        title: "IT-INCUBATOR",
+      },
+    ],
   };
 
   const copy = updatedCompanyTitle(companies, "Dimich", 1, "EPAM");

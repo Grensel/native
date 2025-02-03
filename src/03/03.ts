@@ -1,7 +1,6 @@
 import { StudentType } from "../02/02";
 import { GovernmentBuildings, HousesType } from "../02/02_02";
 
-debugger;
 export const sum = (a: number, b: number) => {
   return a + b;
 };
@@ -28,16 +27,10 @@ export const repairHouse = (houseTepe: HousesType) => {
   houseTepe.repaired = true;
 };
 
-export const toFireStaff = (
-  building: GovernmentBuildings,
-  stuffCountToFire: number
-) => {
+export const toFireStaff = (building: GovernmentBuildings, stuffCountToFire: number) => {
   building.staffCount -= stuffCountToFire;
 };
 
-export const toHireStaff = (
-  building: GovernmentBuildings,
-  stuffCountToHure: number
-) => {
+export const toHireStaff = (building: GovernmentBuildings, stuffCountToHure: number) => {
   building.staffCount += stuffCountToHure;
 };
